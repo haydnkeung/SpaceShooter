@@ -7,31 +7,19 @@ public class PhotonButtons : MonoBehaviour
 {
 
     public InputField joinServerInput, createServerInput;
-    public MenuScript menuScript;
+    //public MenuScript menuScript;
+    public MyHandler handler;
 
     public void createRoom() {
-        RoomOptions options = new RoomOptions { MaxPlayers = 3 };
-        
-            PhotonNetwork.CreateRoom(joinServerInput.text, options, null);//Null?
-       
-        
+        handler.createRoom();
+
     }
 
     public void joinRoom() {
-        PhotonNetwork.JoinRoom(joinServerInput.text);
+        //PhotonNetwork.JoinRoom(joinServerInput.text);
+        handler.joinOrCreateRoom();
     }
 
 
-    private void OnJoinedRoom() {
-        menuScript.disableMenuUI();
-        Debug.Log("Joined room " + joinServerInput.text);
-    }
-
-
-    private void OnCreateRoom() {
-       
-        Debug.Log("Created room " + createServerInput.text);
-        //Debug.Log("Joined room " + joinServerInput.text);
-    }
-
+    
 }

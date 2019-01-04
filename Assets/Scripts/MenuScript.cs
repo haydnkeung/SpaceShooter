@@ -8,7 +8,7 @@ public class MenuScript : MonoBehaviour
 
 
     public void disableMenuUI() {
-        connectedMenu.SetActive(false);
+        PhotonNetwork.LoadLevel("Game");
 
     }
 }

@@ -19,10 +19,10 @@ public class MyHandler : MonoBehaviour
 
 
     public void createRoom() {
-        RoomOptions options = new RoomOptions { MaxPlayers = 3 };
+        RoomOptions options = new RoomOptions();
+        options.MaxPlayers = 3;
 
-
-        PhotonNetwork.CreateRoom(photonButton.joinServerInput.text, options, TypedLobby.Default);
+        PhotonNetwork.CreateRoom(photonButton.createServerInput.text, options, TypedLobby.Default);
     }
 
     public void changeScene(string level) {
@@ -33,6 +33,7 @@ public class MyHandler : MonoBehaviour
         RoomOptions options = new RoomOptions { MaxPlayers = 3 };
 
         PhotonNetwork.JoinRoom(photonButton.joinServerInput.text);
+        //Debug.Log("Room name is "+photonButton.joinServerInput.text);
         //PhotonNetwork.JoinOrCreateRoom(photonButton.joinServerInput.text, options, TypedLobby.Default);
 
     }
@@ -47,7 +48,6 @@ public class MyHandler : MonoBehaviour
         {
             Debug.Log("false");
         }*/
-        Debug.Log("Joined room " + photonButton.joinServerInput.text);
         changeScene("Game");
 
     }

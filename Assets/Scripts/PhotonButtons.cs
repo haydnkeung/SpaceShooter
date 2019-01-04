@@ -7,7 +7,6 @@ public class PhotonButtons : MonoBehaviour
 {
 
     public InputField joinServerInput, createServerInput;
-    //public MenuScript menuScript;
     public MyHandler handler;
 
     public void createRoom() {
@@ -16,8 +15,10 @@ public class PhotonButtons : MonoBehaviour
     }
 
     public void joinRoom() {
-        //PhotonNetwork.JoinRoom(joinServerInput.text);
-        handler.joinOrCreateRoom();
+        //Debug.Log(joinServerInput.text);
+        PhotonNetwork.JoinRoom(joinServerInput.text);
+        //handler.joinOrCreateRoom();
+        //PhotonNetwork.JoinRandomRoom();
     }
 
 

@@ -5,34 +5,42 @@ using UnityEngine;
 
 public class PhotonConnect : MonoBehaviour
 {
-    public string versionName = "1.0";
 
-    public GameObject Sectionview1, Sectionview2, Sectionview3;
+    public Version version;
+    
+    //By Deafult all are disabled except WelcomeScreen
+    public GameObject WelcomeScreen, LobbyScreen, DisconnectedScreen,LoadingScreen;
+
 
 
     public void connectToPhoton() {
-        PhotonNetwork.ConnectUsingSettings(versionName);
+        PhotonNetwork.ConnectUsingSettings(version.versionNumber);
+        WelcomeScreen.SetActive(false);
+        LoadingScreen.SetActive(true);
         Debug.Log("Connecting to Photon");
     }
 
+
     private void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby(TypedLobby.Default);
         Debug.Log("Connected to master");
+        PhotonNetwork.JoinLobby(TypedLobby.Default);
+        
     }
 
     private void OnJoinedLobby() {
-        Sectionview1.SetActive(false);
-        Sectionview2.SetActive(true);
+        WelcomeScreen.SetActive(false);
+        LoadingScreen.SetActive(false);
+        LobbyScreen.SetActive(true);
         Debug.Log("Joined Lobby");
     }
 
 
     private void OnDisconnectedFromPhoton()
     {
-        Sectionview1.SetActive(false);
-        Sectionview2.SetActive(false);
-        Sectionview3.SetActive(true);
+        WelcomeScreen.SetActive(false);
+        LobbyScreen.SetActive(false);
+        DisconnectedScreen.SetActive(true);
         
     }
 

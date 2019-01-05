@@ -29,37 +29,26 @@ public class MyHandler : MonoBehaviour
         PhotonNetwork.LoadLevel(level);
         Debug.Log("Entered Scene " + level);
     }
-    public  void joinOrCreateRoom() {
-        RoomOptions options = new RoomOptions { MaxPlayers = 3 };
+    public  void joinRoom(string serverName) {
 
-        PhotonNetwork.JoinRoom(photonButton.joinServerInput.text);
-        //Debug.Log("Room name is "+photonButton.joinServerInput.text);
-        //PhotonNetwork.JoinOrCreateRoom(photonButton.joinServerInput.text, options, TypedLobby.Default);
-
+        PhotonNetwork.JoinRoom(serverName);
     }
 
     private void OnJoinedRoom()
     {
-        /*if (photonButton.joinServerInput.text==("game"))
-        {
-            Debug.Log("true");
-        }
-        else
-        {
-            Debug.Log("false");
-        }*/
+       
         changeScene("Game");
 
     }
 
     private void OnSceneFinishedLoading(Scene scene,LoadSceneMode mode) {
-        if (scene.name.Equals("Game")) {//==?
+        if (scene.name.Equals("Game")) {
             spawnPlayer();
         }
     }
 
     private void spawnPlayer() {
 
-        PhotonNetwork.Instantiate(Player.name, Player.transform.position, Player.transform.rotation, 0);
+        PhotonNetwork.Instantiate(Player.name, Player.transform.position, Quaternion.identity, 0);
     }
 }

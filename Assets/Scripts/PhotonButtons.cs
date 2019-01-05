@@ -15,10 +15,8 @@ public class PhotonButtons : MonoBehaviour
     }
 
     public void joinRoom() {
-        Debug.Log(joinServerInput.text);
-        PhotonNetwork.JoinRoom(joinServerInput.text);
-        //handler.joinOrCreateRoom();
-        //PhotonNetwork.JoinRandomRoom();
+        Debug.Log("Joinging Room "+joinServerInput.text);
+        handler.joinRoom(joinServerInput.text);
     }
 
 

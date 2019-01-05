@@ -111,8 +111,8 @@ GameObject:
   - component: {fileID: 631936528535193535}
   - component: {fileID: 631936528535193520}
   - component: {fileID: 631936528535193521}
-  - component: {fileID: 631936528535193523}
   - component: {fileID: 631936528535193522}
+  - component: {fileID: 773913883194739786}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -173,8 +173,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e67436f8bd47f3c4a8a0d7ba82c043a6, type: 3}
-  m_Color: {r: 0.3252047, g: 0.42504194, b: 0.7924528, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fdc39364d01f6b54789196750c99a9e0, type: 3}
+  m_Color: {r: 0.2532611, g: 0.8490566, b: 0.16420433, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -231,23 +231,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &631936528535193523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631936528535193524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dcecffddf529f74fb1c5a1119f92103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photonview: {fileID: 631936528535193522}
-  speed: 5
-  normalForce: 800
-  debug: 0
-  myCam: {fileID: 631936528742103396}
 --- !u!114 &631936528535193522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,12 +252,30 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 631936528535193523}
+  - {fileID: 773913883194739786}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &773913883194739786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631936528535193524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7070daa8ad7a6a841bca4b7cf0ca34a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 0.05
+  rotationSpeed: 5
+  missileDelay: 1
+  timeLastFired: 0
+  photonview: {fileID: 631936528535193522}
+  myCam: {fileID: 631936528742103396}
 --- !u!1 &631936528742103396
 GameObject:
   m_ObjectHideFlags: 0

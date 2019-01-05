@@ -8,7 +8,7 @@ public class Version : MonoBehaviour
 
     
     public Text versionText;
-    public string versionNumber = "1.0";//Versio Number
+    public string versionNumber = "1.4.19";//Versio Number
     /*
      Both clients must have same version to see each other
          */

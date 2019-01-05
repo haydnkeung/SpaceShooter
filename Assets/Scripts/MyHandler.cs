@@ -9,6 +9,7 @@ public class MyHandler : MonoBehaviour
 
     public PhotonButtons photonButton;
     public GameObject Player;
+    public Vector3 spawnPos = new Vector3(3, -1, -2);
 
     private void Awake()
     {
@@ -49,6 +50,6 @@ public class MyHandler : MonoBehaviour
 
     private void spawnPlayer() {
 
-        PhotonNetwork.Instantiate(Player.name, Player.transform.position, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Player.name, spawnPos, Quaternion.identity, 0);
     }
 }

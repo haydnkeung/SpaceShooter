@@ -51,7 +51,8 @@ public class playerController : Photon.MonoBehaviour
     private void checkInput()
     {
         float x = Input.GetAxis("Horizontal")*speed*Time.deltaTime;
-        Vector3 pos = new Vector3(x, 0);
+        float y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        Vector3 pos = new Vector3(x, y,0);
         transform.position += pos;
 
     }

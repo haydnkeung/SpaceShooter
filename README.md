@@ -1,0 +1,2 @@
+A online multiplayer real-time space shooter game made using Unity game engine and Photon Networking framework in C#. In this game you control a green ship and you try and shoot down the other player's ship before they shoot you down. This game supports cross-platforming, so you and your friends don't need to have the same system to play together. Through making this project I learned a lot about the Photon Networking framework. For the source code please check out https://github.com/haydnkeung/SpaceShooter.
+![alt text](https://haydnkeung.github.io/pictures/spaceshooter.png)
